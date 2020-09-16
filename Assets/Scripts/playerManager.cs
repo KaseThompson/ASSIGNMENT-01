@@ -65,16 +65,16 @@ public class playerManager : MonoBehaviour
         else if (Input.GetKey("d") || (Input.GetKey("right")))
         {
             rb2d.velocity = new Vector2(2, 0);
-            spriteRen.flipX = true;
-            p1Anim.Play("john3");
+            spriteRen.flipX = false;
+            p1Anim.Play("john4");
 
 
         }
         else if (Input.GetKey("a") || (Input.GetKey("left")))
         {
             rb2d.velocity = new Vector2(-2, 0);
-            spriteRen.flipX = false;
-            p1Anim.Play("john3");
+            spriteRen.flipX = true;
+            p1Anim.Play("john4");
         }
 
     }
