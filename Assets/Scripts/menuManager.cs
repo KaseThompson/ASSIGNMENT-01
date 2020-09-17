@@ -1,39 +1,83 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class menuManager : MonoBehaviour {
 
-   public GameObject player;
-   public GameObject mainmenu;
+    public GameObject player;
+    public GameObject mainmenu;
+    public GameObject cursor;
+    public GameObject[] curserPositions;
+    public GameObject playerSelectIndicator;
 
-    
-    
-    // Use this for initialization
+    private bool onStartGameSelection;
+
+
+
+
+    // Start is called before the first frame update
     void Start()
     {
-       
+        onStartGameSelection = false;
 
-        player.SetActive(true);
-        mainmenu = GetComponent<GameObject>();
-        mainmenu.SetActive(false);
+       
     }
 
     // Update is called once per frame
     void Update() {
 
 
+        // if space or return is pressed  
+
+
+
+        //if (input.getkey("space") || input.getkey("return")) ;
+
+        //player.setactive(true);
+        //mainmenu.setactive(false);
+
+
+
+        if(Input.GetKeyDown("up") || Input.GetKeyDown("down"))
+        {
+
+            if(onStartGameSelection)
+            {
+                onStartGameSelection = false;
+
+
+            }
+            else
+            {
+
+                onStartGameSelection = true;
+            }
+
+
+         
+        }
+
+
+
+        if (onStartGameSelection)
+        {
+            cursor.transform.position = curserPositions[1].transform.position;
+        }
+        else
+        {
+
+            cursor.transform.position = curserPositions[0].transform.position;
+        }
+
+
+
+    }
 
 
 
 
-        if (Input.GetKey("space") || Input.GetKey("return")) ;
 
-        player.SetActive(true);
-        mainmenu.SetActive(false);
+}
     
-
-	}
-    
-     }
+     
 
