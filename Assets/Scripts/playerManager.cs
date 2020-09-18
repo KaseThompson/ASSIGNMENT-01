@@ -46,7 +46,7 @@ public class playerManager : MonoBehaviour
 
 
 
-        if (Input.GetKey("w") || (Input.GetKey("up")))
+        if (Input.GetKey("w"))
         {
         
 
@@ -55,14 +55,14 @@ public class playerManager : MonoBehaviour
             p1Anim.Play("john");
 
         }
-        else if (Input.GetKey("s") || (Input.GetKey("down")))
+        else if (Input.GetKey("s"))
         {
             rb2d.velocity = new Vector2(0, -2);
             spriteRen.flipY = false;
             p1Anim.Play("john2");
         }
 
-        else if (Input.GetKey("d") || (Input.GetKey("right")))
+        else if (Input.GetKey("d"))
         {
             rb2d.velocity = new Vector2(2, 0);
             spriteRen.flipX = false;
@@ -70,7 +70,7 @@ public class playerManager : MonoBehaviour
 
 
         }
-        else if (Input.GetKey("a") || (Input.GetKey("left")))
+        else if (Input.GetKey("a"))
         {
             rb2d.velocity = new Vector2(-2, 0);
             spriteRen.flipX = true;

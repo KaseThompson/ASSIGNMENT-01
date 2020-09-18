@@ -9,7 +9,8 @@ public class menuManager : MonoBehaviour {
     public GameObject cursor;
     public GameObject[] curserPositions;
     public GameObject playerSelectIndicator;
-
+    public GameObject level01;
+   
     private bool onStartGameSelection;
 
 
@@ -53,7 +54,7 @@ public class menuManager : MonoBehaviour {
                 onStartGameSelection = true;
             }
 
-
+          
          
         }
 
@@ -68,7 +69,9 @@ public class menuManager : MonoBehaviour {
 
             cursor.transform.position = curserPositions[0].transform.position;
         }
-
+        if (onStartGameSelection == false && Input.GetKeyDown("space")){
+            mainmenu.SetActive(false);
+        }
 
 
     }
@@ -78,6 +81,3 @@ public class menuManager : MonoBehaviour {
 
 
 }
-    
-     
-
