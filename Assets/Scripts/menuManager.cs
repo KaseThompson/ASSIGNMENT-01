@@ -4,13 +4,25 @@ using UnityEngine;
 using UnityEngine.UI;
 public class menuManager : MonoBehaviour {
 
-    public GameObject player;
+    //public GameObject player;
     public GameObject mainmenu;
     public GameObject cursor;
     public GameObject[] curserPositions;
     public GameObject playerSelectIndicator;
-    public GameObject level01;
-   
+    public GameObject gameArena;
+    public GameObject Player01SpawnPoint;
+    public GameObject playerPrefab;
+    
+    
+    
+    
+    //declare camera variables
+    public Camera gameCamera;
+    public Camera mainCamera;
+
+
+
+
     private bool onStartGameSelection;
 
 
@@ -62,6 +74,18 @@ public class menuManager : MonoBehaviour {
 
         if (onStartGameSelection)
         {
+            //start game
+
+
+            
+
+
+
+
+
+
+            // turn off main menu turn on game arena.
+
             cursor.transform.position = curserPositions[1].transform.position;
         }
         else
@@ -69,8 +93,18 @@ public class menuManager : MonoBehaviour {
 
             cursor.transform.position = curserPositions[0].transform.position;
         }
-        if (onStartGameSelection == false && Input.GetKeyDown("space")){
+
+       if (onStartGameSelection == false && Input.GetKeyDown("space")){
+
+            gameCamera.enabled = true;
+            mainCamera.enabled = false;
+
+            gameArena.SetActive(true);
             mainmenu.SetActive(false);
+
+            // instantiae the player fromthe prefab
+            Instantiate(playerPrefab, Player01SpawnPoint.transform.position, Quaternion.identity);
+
         }
 
 

@@ -50,21 +50,21 @@ public class playerManager : MonoBehaviour
         {
         
 
-            rb2d.velocity = new Vector2(0, 2);
+            rb2d.velocity = new Vector2(0, 35);
             spriteRen.flipY = false;
             p1Anim.Play("john");
 
         }
         else if (Input.GetKey("s"))
         {
-            rb2d.velocity = new Vector2(0, -2);
+            rb2d.velocity = new Vector2(0, -35);
             spriteRen.flipY = false;
             p1Anim.Play("john2");
         }
 
         else if (Input.GetKey("d"))
         {
-            rb2d.velocity = new Vector2(2, 0);
+            rb2d.velocity = new Vector2(35, 0);
             spriteRen.flipX = false;
             p1Anim.Play("john4");
 
@@ -72,7 +72,7 @@ public class playerManager : MonoBehaviour
         }
         else if (Input.GetKey("a"))
         {
-            rb2d.velocity = new Vector2(-2, 0);
+            rb2d.velocity = new Vector2(-35, 0);
             spriteRen.flipX = true;
             p1Anim.Play("john4");
         }
